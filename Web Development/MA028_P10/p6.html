@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function sum1()
+        {
+            var a = parseInt(document.getElementById("f1").value);
+            var b = parseInt(document.getElementById("f2").value);
+
+            var sum = a + b;
+            document.getElementById("sum").value = sum; 
+        }
+
+    </script>
+</head>
+<body>
+    
+        enter the first number : <input type="text" name="f1" id="f1"><br><br>
+        enter the second number : <input type="text" name="f2" id="f2"><br><br>
+        
+        <button onclick="sum1()">Sum</button><br><br>
+   
+    sum = <input type="text" name="sum" id="sum" value="">
+</body>
+</html>

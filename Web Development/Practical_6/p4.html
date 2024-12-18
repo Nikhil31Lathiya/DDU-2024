@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>selector</title>
+    <style>
+      * {
+        text-align: center;
+      }
+      h1 {
+        color: aqua;
+        background-color: rgb(209, 192, 224);
+      }
+      .p1 {
+        color: burlywood;
+      }
+      #div {
+        background-color: rgb(255, 0, 111);
+        height: 500px;
+        width: 90%;
+      }
+      div > p {
+        color: chartreuse;
+        font-size: 30px;
+      }
+      div h1 {
+        color: fuchsia;
+      }
+      div + h2 {
+        background-color: aqua;
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Heading tag</h1>
+    <p class="p1">This Is paragraph</p>
+    <div id="div">
+      <h1>Hello World</h1>
+      <h1>Hello World</h1>
+      <p>this a p tag........</p>
+      <p>this a p tag.........</p>
+      <p>this a p tag........</p>
+    </div>
+    <h2>Hello World</h2>
+    <h2>Hello World</h2>
+    <h2>Hello World</h2>
+  </body>
+</html>

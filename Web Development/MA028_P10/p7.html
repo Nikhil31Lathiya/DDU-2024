@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = new Array(10,23,12,22,34,45,67,78,9);
+        document.write("<br> All Numbers in Array <br>");
+        for(let j=0;j<a.length;j++)
+        {
+            document.write("<strong> " + a[j] + "</strong>");
+        }
+        document.write("<br> <br> Even Numbers in Array <br>");
+        for(let i=0;i<=a.length;i++)
+        {
+            if(a[i]%2==0)
+                document.write("<strong> " + a[i] + " </strong>");
+        }        
+    </script>
+</body>
+</html>

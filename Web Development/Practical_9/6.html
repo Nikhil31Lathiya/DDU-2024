@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function area_of_circle() {
+                var1 = parseInt(prompt("Enter the radius :"));
+                formula =  (22/7)*var1*var1; 
+                document.write("the area of circle of " + var1 +" is "+ formula );
+        }
+        function area_of_tri(){
+            let b =  parseInt(prompt("Enter the base :"));
+            let h =  parseInt(prompt("Enter the height :"));
+            formula = 0.5*b*h;
+            document.write("the area of triangle is "+ formula );  
+        }
+    
+        function area_of_rec(){
+            let w =  parseInt(prompt("Enter the width :"));
+            let h =  parseInt(prompt("Enter the height :"));
+            formula = w*h;
+            document.write("the area of rectangle is "+ formula );  
+        }
+
+        ans = parseInt(prompt("1. for Area of Circle\n2. for area of rectangle\n 3. from area of triangle"));
+        switch (ans) {
+            case 1: area_of_circle();
+                break;
+            case 2: area_of_tri();  
+                break;
+            case 3: area_of_rec();
+                break;    
+            default: prompt("Enter a valid no ");
+                break;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="return validate()" name="form">
+      Enter the username :
+      <input type="text" name="usernmae" id="username" /><br />
+      Enter the Pass :<input type="password" name="password" id="password" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+<script>
+  function validate() {
+    var username = document.forms["form"]["username"].value;
+    var password = document.forms["form"]["password"].value;
+
+    if (username == "") {
+      alert("Enter username");
+    } else if (password == " ") {
+      alert("Enter password");
+    } else {
+      if (username == "Admin") {
+        if (password == "Admin") {
+          alert("Successful Login");
+        } else {
+          alert("Enter Correct Password");
+        }
+      } else {
+        alert("Enter Correct Username");
+      }
+    }
+  }
+</script>

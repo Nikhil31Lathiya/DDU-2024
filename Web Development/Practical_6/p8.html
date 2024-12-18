@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pseudo-classes & Pseudo-elements</title>
+    <style>
+      .first-child {
+        color: red;
+      }
+
+      .last-child {
+        color: blue;
+      }
+
+      .only-child {
+        color: green;
+      }
+
+      .nth-child {
+        color: orange;
+      }
+
+      .nth-last-child {
+        color: purple;
+      }
+
+      .hover:hover {
+        color: yellow;
+      }
+
+      .focus:focus {
+        color: pink;
+      }
+
+      .active:active {
+        color: cyan;
+      }
+      .visited:visited {
+        color: magenta;
+      }
+
+      .link:link {
+        color: lime;
+      }
+
+      ::before {
+        content: "-";
+        color: black;
+      }
+
+      ::after {
+        content: "--";
+        color: rgb(224, 88, 88);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="first-child">First Child</h1>
+    <p class="last-child">Last Child</p>
+    <p class="only-child">Only Child</p>
+    <p class="nth-child">Nth Child</p>
+    <p class="nth-last-child">Nth Last Child</p>
+    <p class="hover">Hover</p>
+    <p class="focus">Focus</p>
+    <p class="active">Active</p>
+    <p class="visited">Visited</p>
+    <p class="link">Link</p>
+    <p>This is a paragraph.</p>
+  </body>
+</html>

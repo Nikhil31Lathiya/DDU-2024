@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = new Array(10,23,12,22,34,45,67,78,9);
+        var min = a[0];
+        var max = a[0];
+        document.write("<br><h3> All Numbers in Array </h3>");
+        for(let j=0;j<a.length;j++)
+        {
+            document.write("<strong> " + a[j] + "</strong>");
+        }
+        for(let i=0;i<=a.length;i++)
+        {
+            if(a[i]<min)
+                min = a[i];
+            if(a[i]>max)
+                max = a[i];
+        }        
+        document.write("<h3>The Minimum Number is: " + min + " </h3>");
+        document.write("<h3>The Maximum Number is: " + max + " </h3>");
+    </script>
+</body>
+</html>
