@@ -1,0 +1,230 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background-color: #495057;
+  }
+  
+  /* Cart Section */
+  .cart {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-title {
+    text-align: center;
+    font-size: 32px;
+    color: #343a40;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+  }
+  
+  .empty-cart-message {
+    text-align: center;
+    color: #6c757d;
+    font-size: 20px;
+  }
+  
+  /* Cart Table */
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .cart-table thead {
+    background-color: #343a40;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .cart-table th,
+  .cart-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+  }
+  
+  .cart-table th {
+    font-weight: bold;
+  }
+  
+  .cart-table tbody tr:hover {
+    background-color: #f1f3f5;
+  }
+  
+  .product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cart-product-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+  }
+  
+  .product-name {
+    font-weight: bold;
+    color: #343a40;
+  }
+  
+  /* Quantity, Price, and Total styling */
+  .cart-table td:nth-child(2),
+  .cart-table td:nth-child(3),
+  .cart-table td:nth-child(4) {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    color: #495057;
+  }
+  
+  /* Button styles */
+  .btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Quantity buttons */
+  .quantity-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin: 0 5px;
+    padding: 0;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .decrease-btn {
+    background-color: #dc3545; /* Red for decrease */
+  }
+  
+  .increase-btn {
+    background-color: #28a745; /* Green for increase */
+  }
+  
+  .decrease-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .increase-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Aligning action buttons side by side */
+  .quantity-form {
+    display: inline-block;
+  }
+  
+  /* Smaller Order button */
+  .order-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: #ffc107;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  
+  .order-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Total price styles */
+  .total-price {
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    color: #17a2b8;
+    font-family: 'Georgia', serif;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer styles */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* Total price styles */
+.total-price {
+    text-align: right;
+    font-size: 26px;
+    font-weight: bold;
+    color: #2938e1;
+    font-family: 'Lobster', cursive; /* Changed font style to Lobster */
+    background-color: #f1f8fc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(202, 140, 140, 0.1);
+    margin-top: 20px;
+  }
+  

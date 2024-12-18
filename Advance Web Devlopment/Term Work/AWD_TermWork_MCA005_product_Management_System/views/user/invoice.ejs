@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .header,
+    .footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .invoice-table th,
+    .invoice-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .invoice-table th {
+      background-color: #f4f4f4;
+    }
+
+    .invoice-summary {
+      margin-top: 20px;
+      text-align: right;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Invoice</h1>
+    <p>MyShop</p>
+    <p>1234 Main Street</p>
+    <p>City, State, ZIP</p>
+    <p>Phone: (123) 456-7890</p>
+    <p>Order Date: <%= orderDate %></p>
+  </div>
+
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cart.forEach(item => { %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td><%= item.quantity %></td>
+        <td>$<%= item.product.price.toFixed(2) %></td>
+        <td>$<%= (item.product.price * item.quantity).toFixed(2) %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <div class="invoice-summary">
+    <p>Total Price: $<%= totalPrice.toFixed(2) %></p>
+  </div>
+
+  <div class="footer">
+    <p>Thank you for your purchase!</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background-color: #495057;
+  }
+  
+  /* Order Confirmation Section */
+  .order-confirmation {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .order-title {
+    font-size: 32px;
+    font-family: 'Georgia', serif;
+    color: #343a40;
+    margin-bottom: 30px;
+  }
+  
+  /* Order Table */
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .order-table thead {
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  
+  .order-table th,
+  .order-table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .order-table th {
+    font-weight: bold;
+  }
+  
+  .order-table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .order-table tbody tr:hover {
+    background-color: #e3f2fd;
+    cursor: pointer;
+  }
+  
+  /* Highlighting alternate rows */
+  .order-table tbody tr:nth-child(even) {
+    background-color: #f1f8e9;
+  }
+  
+  /* Total Price Styling */
+  .total-price {
+    font-size: 26px;
+    font-weight: bold;
+    color: #dc3545; /* Changed to a reddish color */
+    font-family: 'Lobster', cursive;
+    background-color: #fbeae9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    text-align: right;
+  }
+  
+  /* Confirm Button */
+  .confirm-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Footer styles */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
