@@ -1,0 +1,22 @@
+{
+    "stud_marks": [
+        {
+            "name": "Vivek",
+            "subject": "JAVA",
+            "marks_obtained": 77,
+            "total_marks": 100
+        },
+        {
+            "name": "Shivang",
+            "subject": "C++",
+            "marks_obtained": 55,
+            "total_marks": 100
+        },
+        {
+            "name": "Nikhil",
+            "subject": "C",
+            "marks_obtained": 65,
+            "total_marks": 100
+        }
+    ]
+}

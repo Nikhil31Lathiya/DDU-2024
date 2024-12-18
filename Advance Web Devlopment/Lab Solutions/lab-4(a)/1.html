@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 4_1</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <style>
+      .div_1 {
+        width: 100px;
+        height: 150px;
+        background-color: lightblue;
+      }
+      .div_2 {
+        width: 100px;
+        height: 150px;
+        background-color: lightcoral;
+      }
+      .div_3 {
+        width: 100px;
+        height: 150px;
+        background-color: lightgrey;
+      }
+      .div_4 {
+        width: 100px;
+        height: 150px;
+        background-color: lightsalmon;
+      }
+      .div_modify {
+        width: 200px;
+        height: 200px;
+        background-color: lightpink;
+        border: 1px dashed black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1" class="div_1">Div 1</div>
+    <div id="d2" class="div_2">Div 2</div>
+    <div id="d3" class="div_3">Div 3</div>
+    <br />
+    <button id="btn_modify">Modify Div</button>
+    <br />
+    <button id="btn_add_div">Add Div</button>
+    <br />
+    <button id="btn_del_div">Delete Div</button>
+    <br />
+    <button id="btn_hide_div">Hide New Div</button>
+    <script>
+      $(document).ready(function () {
+        $("#btn_modify").click(function () {
+          $("#d1,#d2,#d3,#d4").addClass("div_modify");
+        });
+
+        $("#btn_add_div").click(function () {
+          var userwidth = prompt("Enter width");
+          var userheight = prompt("Enter height");
+          $("#d3").after("<div id='d4' class='div_4'>New Div</div>");
+          $("#d4").css({ width: userwidth, height: userheight });
+        });
+
+        $("#btn_del_div").click(function () {
+          $("#d1,#d2,#d3").remove();
+        });
+
+        $("#btn_hide_div").click(function () {
+          $("#d4").hide();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load JSON Data with AJAX Events</title>
+    <script src="jquery.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Global AJAX events
+            $(document).ajaxStart(function() {
+                $('#loading').show();
+                console.log('AJAX request started.');
+            });
+
+            $(document).ajaxStop(function() {
+                $('#loading').hide();
+                console.log('All AJAX requests completed.');
+            });
+
+            $(document).ajaxSend(function(event, jqxhr, settings) {
+                console.log('AJAX request sent to: ' + settings.url);
+            });
+
+            $(document).ajaxComplete(function(event, jqxhr, settings) {
+                console.log('AJAX request completed for: ' + settings.url);
+            });
+
+            $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
+                console.log('AJAX request error for: ' + settings.url);
+                console.log('Error: ' + thrownError);
+            });
+
+            $(document).ajaxSuccess(function(event, jqxhr, settings) {
+                console.log('AJAX request succeeded for: ' + settings.url);
+            });
+
+            // Load JSON data using getJSON method
+            $('#loadMarksBtn').click(function() {
+               
+                    $.getJSON('mark.json', function(data) {
+                        // Set the student name
+                        $('#name').text("Student Name : " + data.student);
+                        $('#python').text("python : "+data.python);
+                        $('#java').text("java : "+data.java);
+                        $('#c').text("c : "+data.c);
+    
+                        // Iterate over the marks array and populate the table
+                        
+                    }).fail(function() {
+                        alert('Error loading marks data.');
+                    });
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Student Marksheet</h2>
+    <button id="loadMarksBtn">Load Marks</button>
+    <div id="name"></div>
+    <div id="python"></div>
+    <div id="java"></div>
+    <div id="c"></div>
+
+    
+</body>
+</html>

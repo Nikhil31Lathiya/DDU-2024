@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratical 4_2</title>
+    <!-- <script src="jquery/jquery-3.7.1.js"></script> -->
+    <script src="./jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <button id="show_add">Show Address</button>
+    <div id="div"></div>
+    <div id="status"></div>
+    <script>
+      $(document).ready(function () {
+        // $(document).ajaxStart(function () {
+        //   alert("ajax request started!!");
+        // });
+        // $("#show_add").click(function () {
+        //   $("#div").load("address.html");
+        // });
+        // $(document).ajaxStart(function () {
+        //         $("#status").text("AJAX request started...");
+        //     });
+        $("#show_add").click(function () {
+          $.ajax({
+            url: "address.html",
+            type: "GET",
+            success: function (data) {
+              $("#div").html(data);
+            },
+            error: function (xhr) {
+              alert("Error: " + xhr.status + " " + xhr.statusText);
+            },
+          });
+        });
+        // $(document).ajaxStop(function () {
+        //   $("#status").text("ajax request stopped!!");
+        // });
+      });
+    </script>
+  </body>
+</html>

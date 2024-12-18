@@ -1,0 +1,29 @@
+<!-- 7. Create an HTML document with following requirements:
+a. Create a text box to have text input from user.
+b. A check box: UpperCase
+c. When UpperCase box is checked: convert the textbox’s content to upper case -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q7</title>
+    <script>
+      function toUpper() {
+        let txtBox = document.getElementById("txt1");
+
+        if (document.getElementById("chk").checked) {
+          txtBox.value = txtBox.value.toUpperCase();
+        } else {
+          txtBox.value = txtBox.value.toLowerCase();
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="txt1" />
+    <label for="chk">UpperCase</label>
+    <input type="checkbox" id="chk" onclick="toUpper()" />
+  </body>
+</html>

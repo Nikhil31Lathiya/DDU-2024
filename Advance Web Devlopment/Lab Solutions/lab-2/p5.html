@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            border-color: red;
+            background-color: yellow;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Add blur event to check for negative values and apply/remove error class
+            $("#txt1, #txt2").on("blur", function() {
+                var value = $(this).val();
+                if (value < 0) {
+                    $(this).addClass("error");
+                } else {
+                    $(this).removeClass("error");
+                }
+                checkInputs();
+            });
+
+            // Add input event to check if both textboxes have values and enable/disable buttons
+            $("#txt1, #txt2").on("input", function() {
+                checkInputs();
+            });
+
+            function checkInputs() {
+                var txt1Val = $("#txt1").val();
+                var txt2Val = $("#txt2").val();
+                if (txt1Val.length > 0 && txt2Val.length > 0) {
+                    $("#plus, #min, #mul, #div").prop("disabled", false);
+                } else {
+                    $("#plus, #min, #mul, #div").prop("disabled", true);
+                }
+            }
+
+            // Initial disable of buttons
+            $("#plus, #min, #mul, #div").prop("disabled", true);
+
+            // Button click handlers for arithmetic operations
+            $("#plus").click(function() {
+                var x = parseInt($("#txt1").val());
+                var y = parseInt($("#txt2").val());
+                var z = x + y;
+                $("p").html(z);
+            });
+
+            $("#min").click(function() {
+                var x = parseInt($("#txt1").val());
+                var y = parseInt($("#txt2").val());
+                var z = x - y;
+                $("p").html(z);
+            });
+
+            $("#mul").click(function() {
+                var x = parseInt($("#txt1").val());
+                var y = parseInt($("#txt2").val());
+                var z = x * y;
+                $("p").html(z);
+            });
+
+            $("#div").click(function() {
+                var x = parseInt($("#txt1").val());
+                var y = parseInt($("#txt2").val());
+                var z = x / y;
+                $("p").html(z);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="text" id="txt2">
+    <button id="plus">+</button>
+    <button id="min">-</button>
+    <button id="mul">*</button>
+    <button id="div">/</button>
+    <p></p>
+</body>
+</html>

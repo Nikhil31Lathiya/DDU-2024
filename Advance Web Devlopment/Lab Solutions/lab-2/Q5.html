@@ -1,0 +1,105 @@
+<!-- Write appropriate HTML-JavaScript-jQuery code for the following requirements: 
+a. Create one style class with name ‘error’:- 
+i. border color : red  
+ii. background color : yellow.  
+iii. Apply this class to a text box when the focus is moved out of it and if 
+entered data is a negative number. 
+b. Create  two  textboxes  and  one  button  with  +  on  it.  On  click  of  the  +  button, 
+display  sum  of  the  numbers  entered  in  two  textboxes.  Also  perform  same 
+functionality for subtract, multiply and divide buttons. 
+c. The buttons in above code 5-b should remain in disable state until any one or 
+both of the textboxes are vacant.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arithmetic Operations</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      .error {
+        border-color: red;
+        background-color: yellow;
+      }
+      .result {
+        margin-top: 10px;
+      }
+      button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        // Check if the textboxes have values and enable/disable buttons
+        function checkInputs() {
+          if ($("#num1").val() === "" || $("#num2").val() === "") {
+            $("button").attr("disabled", true);
+          } else {
+            $("button").attr("disabled", false);
+          }
+        }
+
+        // Apply error class if the input value is negative
+        $("input[type='text']").on("blur", function () {
+          if ($(this).val() < 0) {
+            $(this).addClass("error");
+          } else {
+            $(this).removeClass("error");
+          }
+        });
+
+        // Enable/disable buttons on input
+        $("input[type='text']").on("input", function () {
+          checkInputs();
+        });
+
+        // Perform arithmetic operations
+        $("#add").click(function () {
+          let result =
+            parseFloat($("#num1").val()) + parseFloat($("#num2").val());
+          $("#result").text("Sum: " + result);
+        });
+
+        $("#subtract").click(function () {
+          let result =
+            parseFloat($("#num1").val()) - parseFloat($("#num2").val());
+          $("#result").text("Difference: " + result);
+        });
+
+        $("#multiply").click(function () {
+          let result =
+            parseFloat($("#num1").val()) * parseFloat($("#num2").val());
+          $("#result").text("Product: " + result);
+        });
+
+        $("#divide").click(function () {
+          let result =
+            parseFloat($("#num1").val()) / parseFloat($("#num2").val());
+          $("#result").text("Quotient: " + result);
+        });
+
+        // Initialize buttons state
+        checkInputs();
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <label for="num1">Number 1:</label>
+      <input type="text" id="num1" />
+    </div>
+    <div>
+      <label for="num2">Number 2:</label>
+      <input type="text" id="num2" />
+    </div>
+    <div>
+      <button id="add">+</button>
+      <button id="subtract">-</button>
+      <button id="multiply">*</button>
+      <button id="divide">/</button>
+    </div>
+    <div class="result" id="result"></div>
+  </body>
+</html>

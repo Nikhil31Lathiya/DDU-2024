@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #content {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="showMarksheetBtn">Show Marksheet</button>
+    <button id="showAddressBtn">Show Address</button>
+    <div id="content">
+        <!-- Content from marksheet.html or address.html will be loaded here -->
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#showMarksheetBtn').click(function() {
+                $('#content').load('marksheet.html');
+            });
+
+            $('#showAddressBtn').click(function() {
+                $('#content').load('address.html');
+            });
+        });
+    </script>
+</body>
+</html>

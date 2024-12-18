@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HTML Table</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .female-row {
+            background-color: green;
+            color: white;
+        }
+        .bold-age {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Information Table</h2>
+    <button id="insertRowBtn">Insert Row</button>
+    <button id="deleteRowBtn">Delete Current Row</button>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>RollNo.</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" class="rollno"></td>
+                <td><input type="text" class="name"></td>
+                <td><input type="text" class="gender"></td>
+                <td><input type="text" class="age"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            // Function to validate gender and age
+            function validateRow(row) {
+                var gender = row.find('.gender').val().toUpperCase();
+                var age = parseInt(row.find('.age').val(), 10);
+                
+                row.removeClass('female-row');
+                row.find('.age').removeClass('bold-age');
+                
+                if (gender === 'F') {
+                    row.addClass('female-row');
+                }
+                if (age > 0 && age < 18) {
+                    row.find('.age').addClass('bold-age');
+                }
+            }
+            
+            // Insert a new row
+            $('#insertRowBtn').click(function() {
+                var newRow = '<tr>' +
+                    '<td><input type="text" class="rollno"></td>' +
+                    '<td><input type="text" class="name"></td>' +
+                    '<td><input type="text" class="gender"></td>' +
+                    '<td><input type="text" class="age"></td>' +
+                    '</tr>';
+                $('#studentTable tbody').append(newRow);
+            });
+
+            // Delete the current row
+            $('#deleteRowBtn').click(function() {
+                var rows = $('#studentTable tbody tr');
+                if (rows.length > 1) {
+                    rows.last().remove();
+                } else {
+                    alert('The table must contain at least one row.');
+                }
+            });
+
+            // Validate input on change
+            $('#studentTable').on('input', '.gender, .age', function() {
+                var row = $(this).closest('tr');
+                var gender = row.find('.gender').val().toUpperCase();
+                var age = parseInt(row.find('.age').val(), 10);
+
+                // Gender validation
+                if (gender !== 'F' && gender !== 'M' && gender !== 'O') {
+                    alert('Invalid gender. Valid values are: F, M, O.');
+                    row.find('.gender').val('');
+                }
+                // Age validation
+                if (isNaN(age) || age <= 0) {
+                    alert('Invalid age. Age must be a positive number.');
+                    row.find('.age').val('');
+                }
+
+                validateRow(row);
+            });
+
+            // Initial validation for the first row
+            $('#studentTable tbody tr').each(function() {
+                validateRow($(this));
+            });
+        });
+    </script>
+</body>
+</html>

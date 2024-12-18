@@ -1,0 +1,61 @@
+<!-- 6. Create an HTML document to fulfill following requirements:
+a. Create a simple HTML document for collecting user input such as: name (text),
+age (text) and gender (radio button). Three radio buttons for three genders each:
+male, female and other.
+b. When ‘male’ radio button is clicked: change document background to green
+c. When ‘female’ radio button is clicked: change document background to blue
+d. When ‘other’ radio button is clicked: change document background to yellow
+e. Create a button ‘checkAge’, on-click it should show one of the appropriate alert:
+‘kid’, ‘not adult’, ‘adult’ or ‘Sr. citizen’. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function changeColor(color) {
+        document.body.style.background = color;
+      }
+
+      function chkAge() {
+        let age = document.getElementById("age").value;
+        parseInt(age);
+
+        if (age < 18) {
+          document.getElementById("msg").innerHTML = "Kid : " + age;
+        } else if (age >= 18 && age <= 45) {
+          document.getElementById("msg").innerHTML = "Adult : " + age;
+        } else {
+          document.getElementById("msg").innerHTML = "old : " + age;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    age : <input type="text" id="age" /> <br />
+    gender :
+    <input
+      type="radio"
+      id="male"
+      name="gender"
+      onclick="changeColor('blue')"
+    />male
+    <input
+      type="radio"
+      id="female"
+      name="gender"
+      onclick="changeColor('yellow')"
+    />Female
+    <input
+      type="radio"
+      id="other"
+      name="gender"
+      onclick="changeColor('pink')"
+    />Other
+
+    <button type="button" onclick="chkAge()">click here</button>
+    <h3 id="msg"></h3>
+  </body>
+</html>

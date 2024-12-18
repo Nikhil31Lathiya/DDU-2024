@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Size and Position</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #element {
+        width: 200px;
+        height: 100px;
+        margin: 50px;
+        background-color: lightblue;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="element">This is the element</div>
+
+    <button id="showDetails">Show Size and Position</button>
+
+    <div id="output"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#showDetails").click(function () {
+          var element = $("#element");
+
+          // Get various sizes
+          var width = element.width();
+          var height = element.height();
+          var innerWidth = element.innerWidth();
+          var innerHeight = element.innerHeight();
+          var outerWidth = element.outerWidth();
+          var outerHeight = element.outerHeight();
+          var outerWidthWithMargin = element.outerWidth(true);
+          var outerHeightWithMargin = element.outerHeight(true);
+
+          // Get position
+          var position = element.position(); // Relative to the parent
+          var offset = element.offset(); // Relative to the document
+
+          // Output the results
+          $("#output").html(`
+            <p>Width: ${width}px</p>
+            <p>Height: ${height}px</p>
+            <p>Inner Width: ${innerWidth}px</p>
+            <p>Inner Height: ${innerHeight}px</p>
+            <p>Outer Width: ${outerWidth}px</p>
+            <p>Outer Height: ${outerHeight}px</p>
+            <p>Outer Width with Margin: ${outerWidthWithMargin}px</p>
+            <p>Outer Height with Margin: ${outerHeightWithMargin}px</p>
+            <p>Position (relative to parent) - Top: ${position.top}px, Left: ${position.left}px</p>
+            <p>Offset (relative to document) - Top: ${offset.top}px, Left: ${offset.left}px</p>
+        `);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!-- Write appropriate HTML-JavaScript-jQuery code for the following requirements: 
+a. Write  HTML  code  to  create  three  HTML  elements  of  different  types  and 
+background colors. Write jQuery code print background color of each element. 
+b. Write HTML code to create three HTML elements of different types and sizes. 
+Write jQuery code print size of each element. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // $("p, div, h1").each(function () {
+        $("body")
+          .children()
+          .each(function () {
+            var bgColor = $(this).css("background-color");
+            alert($(this).prop("tagName") + " background color: " + bgColor);
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <p style="background-color: aquamarine">This is a paragraph.</p>
+    <div style="background-color: blueviolet">This is a div.</div>
+    <h1 style="background-color: chartreuse">This is a heading.</h1>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!-- Write appropriate HTML-JavaScript-jQuery code for the following requirements: 
+a. Write  HTML  code  to  create  three  HTML  elements  of  different  types  and 
+different CSS style class. Write jQuery code to  
+i. find an element that contains a specified class. 
+ii. toggle a specified class when an element is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Example</title>
+    <style>
+      .header {
+        font-size: 2em;
+        color: blue;
+      }
+
+      .paragraph {
+        font-size: 1.2em;
+        color: green;
+      }
+
+      .toggle-btn {
+        padding: 10px 20px;
+        font-size: 1em;
+        color: white;
+        background-color: red;
+        border: none;
+        cursor: pointer;
+      }
+
+      .toggle-btn.active {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="header">Header Element</h1>
+    <p class="paragraph">This is a paragraph element.</p>
+    <button class="toggle-btn">Click Me!</button>
+
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // i. Find an element that contains a specified class
+        const nm = $(".paragraph").prop("tagName");
+        console.log(nm); // Logs the text of the paragraph element
+
+        // ii. Toggle a specified class when an element is clicked
+        $(".toggle-btn").click(function () {
+          $(this).toggleClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

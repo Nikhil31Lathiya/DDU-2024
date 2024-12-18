@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+
+    <style>
+      .style1 {
+        font-size: 16px;
+        color: blue;
+      }
+      .style2 {
+        font-size: 20px;
+        color: red;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        // Requirement a
+        $("#welcomeButton").click(function () {
+          $("#welcomeMessage").text("Welcome");
+        });
+
+        // Requirement b
+        $("input[type='text']").click(function () {
+          $(this).css("background-color", "yellow");
+        });
+
+        // Requirement c
+        $("#changeStyleButton").click(function () {
+          $("#styledParagraph").toggleClass("style1 style2");
+        });
+
+        $("#styledParagraph").click(function () {
+          $("#styledParagraph").toggleClass("style1 style2");
+        });
+
+        $("#setValuebtn").click(function () {
+          var textValue = $("#txt1").val();
+          $(this).text(textValue);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Requirement a -->
+    <button id="welcomeButton">Click Me</button>
+    <span id="welcomeMessage"></span>
+
+    <!-- Requirement b -->
+    <input type="text" id="input1" />
+    <input type="text" id="input2" />
+    <input type="text" id="input3" />
+
+    <!-- Requirement c -->
+    <p id="styledParagraph" class="style1">This is a paragraph.</p>
+    <button id="changeStyleButton">Change Style</button>
+
+    <!-- Requirement e -->
+    <input type="text" id="txt1" />
+    <button id="setValuebtn" value="raju" name="btn">Click here</button>
+  </body>
+</html>

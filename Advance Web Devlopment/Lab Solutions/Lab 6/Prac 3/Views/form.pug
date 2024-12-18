@@ -1,0 +1,25 @@
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Create File
+    body 
+        form(action="/file_handling", method="post")
+            label(for="fname") Enter File Name : 
+            input(type="text", name="fname")
+            br
+            br 
+            label(for="msg") Enter Message : 
+            textarea(name="msg", cols="30", rows="10") 
+            br
+            br
+            input(type="submit", value="Submit")
+        br
+        br
+        h3 Get File Details
+        form(action="/showfilecontents", method="post") 
+            label(for="fname1") Enter File Name :  
+            input(type="text", name="fname1")
+            br
+            br
+            input(type="submit", value="Get File Contents")

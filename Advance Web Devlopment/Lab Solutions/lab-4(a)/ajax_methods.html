@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Method</title>
+    <script src="jquery/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <p>Methods:</p>
+    <br>
+    ajax()
+    get()
+    post()
+    getjson()
+    getscript()
+    load()
+    <br>
+    <p>event -- event object</p>
+    <p>xhr -- xmlhttprequest object</p>
+    <script>
+        $(document).ready(function()
+    {
+        $(document).ajaxStart(function () {
+            alert("ajax request sucesfully started");
+          });
+
+        $(document).ajaxSuccess(function () {
+        alert("ajax request sucesfully comleted");
+        });
+        $(document).ajaxStop(function () {
+        alert("ajax request sucesfully stopped");
+        });
+    })
+    </script>
+    <!-- get JSON data -->
+   <script>
+     function getjson()
+    {
+        $.getJSON("marks.json"),function(data)
+        {
+            $("#display").html("<p>name:"+data.name+"</p>");
+        }
+    }
+   </script>
+
+   <!-- javascript function for ajax -->
+    <button id="ajax_set" onclick="setup_ajax">ajax Setup</button>
+    <script>
+        function setup_ajax()
+        {
+            $(document).ajaxsetup({
+                URL:"address.txt",
+                // type:"GET",
+                success: function(data)
+                {
+                    $("#div").load("address.html");
+                },
+                error:function(xhr)
+                {
+                    alert("error:"+xhr.status+xhrstatustext);
+                }
+            });
+        }
+    </script>
+   
+</body>
+</html>

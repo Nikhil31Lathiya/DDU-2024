@@ -1,0 +1,35 @@
+<!-- 5. Create an HTML document to fulfill following requirements:
+a. Collect two numbers using HTML text box controls say text1 and text2.
+b. Create a button ‘Sum’ with id ‘btnSum’, on-click JavaScript function
+showSum() should be invoked.
+c. Create a JavaScript function showSum() to show sum of the numbers available
+in text1 and text2 –
+i. as an alert.
+ii. In a third text box.
+iii. In <h3>. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P-5</title>
+  </head>
+  <body>
+    <input type="text" id="txt1" /><br />
+    <input type="text" id="txt2" /><br />
+    <input type="text" id="txt3" /><br />
+    <button onclick="showSum()">click here</button>
+    <h3 id="showSum"></h3>
+  </body>
+  <script>
+    function showSum() {
+      let n1 = document.getElementById("txt1").value;
+      let n2 = document.getElementById("txt2").value;
+      let sum = parseInt(n1) + parseInt(n2);
+      document.getElementById("txt3").value = sum;
+      alert("the sum is : " + sum);
+      document.getElementById("showSum").innerHTML = "Sum is : " + sum;
+    }
+  </script>
+</html>

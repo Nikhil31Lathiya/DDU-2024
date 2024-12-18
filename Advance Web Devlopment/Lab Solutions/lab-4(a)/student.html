@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#show_marksheet').click(function () {
+                $.ajax({
+                    url: 'marksheet.html',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#marksheet').html(data);
+                    },
+                    error: function (xhr) {
+                        alert("Error: " + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+
+            $('#show_address').click(function () {
+                $.ajax({
+                    url: 'address.html',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#address').html(data);
+                    },
+                    error: function (xhr) {
+                        alert("Error: " + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        button{
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="show_marksheet">Show Marksheet</button>
+    <button id="show_address">Show Address</button>
+    <div id="address"></div>
+    <div id="marksheet"></div>
+</body>
+</html>

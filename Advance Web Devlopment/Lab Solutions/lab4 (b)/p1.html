@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Div Manipulation</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Modify sizes of initial div elements
+            $('.div1').css({'width': '200px', 'height': '200px'});
+            $('.div2').css({'width': '150px', 'height': '150px'});
+            $('.div3').css({'width': '125px', 'height': '125px'});
+
+            // Create a new div element with user-specified height and width
+            $('#createDiv').click(function() {
+                var height = $('#height').val();
+                var width = $('#width').val();
+                $('<div class="created"></div>').css({
+                    'height': height + 'px',
+                    'width': width + 'px'
+                }).appendTo('body');
+            });
+
+            // Delete initial div elements and hide created div elements
+            $('#deleteHideDivs').click(function() {
+                $('.div1, .div2, .div3').remove();
+                $('.created').hide();
+            });
+        });
+    </script>
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .div2 {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+        }
+        .div3 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        .created {
+            background-color: yellow;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    
+    <input type="text" id="height" placeholder="Height">
+    <input type="text" id="width" placeholder="Width">
+    <button id="createDiv">Create Div</button>
+    <button id="deleteHideDivs">Delete/Hide Divs</button>
+
+    
+</body>
+</html>

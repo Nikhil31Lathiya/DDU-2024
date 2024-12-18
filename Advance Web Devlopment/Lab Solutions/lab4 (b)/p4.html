@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load JSON Data with getJSON</title>
+    <script src="jquery.js"></script>
+    
+        <script>
+            $(document).ready(function() {
+                $('#loadMarksBtn').click(function() {
+                    $.getJSON('mark.json', function(data) {
+                        // Set the student name
+                        $('#name').text("Student Name : " + data.student);
+                        $('#python').text("python : "+data.python);
+                        $('#java').text("java : "+data.java);
+                        $('#c').text("c : "+data.c);
+    
+                        // Iterate over the marks array and populate the table
+                        
+                    }).fail(function() {
+                        alert('Error loading marks data.');
+                    });
+                });
+            });
+        </script>
+</head>
+<body>
+    <h2>Student Marksheet</h2>
+    <button id="loadMarksBtn">Load Marks</button>
+    <div id="name"></div>
+    <div id="python"></div>
+    <div id="java"></div>
+    <div id="c"></div>
+</body>
+</html>

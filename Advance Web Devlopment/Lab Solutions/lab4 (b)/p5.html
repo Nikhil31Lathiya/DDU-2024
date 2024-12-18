@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            let counte = 0;
+            // Global AJAX events
+            $(document).ajaxStart(function() {
+                counte++;
+                $('#loading').show();
+                console.log('AJAX request started.');
+            });
+
+            $(document).ajaxStop(function() {
+                $('#loading').hide();
+                console.log('All AJAX requests completed.');
+            });
+
+            $(document).ajaxSend(function(event, jqxhr, settings) {
+                console.log('AJAX request sent to: ' + settings.url);
+            });
+
+            $(document).ajaxComplete(function(event, jqxhr, settings) {
+                console.log(counte);
+                console.log('AJAX request completed for: ' + settings.url);
+            });
+
+            $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
+                console.log('AJAX request error for: ' + settings.url);
+                console.log('Error: ' + thrownError);
+            });
+
+            $(document).ajaxSuccess(function(event, jqxhr, settings) {
+                console.log('AJAX request succeeded for: ' + settings.url);
+            });
+
+            // Load marksheet using AJAX
+            $('#showMarksheetBtn').click(function() {
+                $.ajax({
+                    url: 'marksheet.html',
+                    method: 'GET',
+                    dataType: 'html',
+                    success: function(data) {
+                        $('#content').html(data);
+                    },
+                    error: function() {
+                        alert('Error loading marksheet.');
+                    }
+                });
+            });
+
+            // Load address using AJAX
+            $('#showAddressBtn').click(function() {
+                $.ajax({
+                    url: 'address.html',
+                    method: 'GET',
+                    dataType: 'html',
+                    success: function(data) {
+                        $('#content').html(data);
+                    },
+                    error: function() {
+                        alert('Error loading address.');
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #loading {
+            display: none;
+            color: red;
+            font-weight: bold;
+        }
+        .content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Page</h2>
+    <button id="showMarksheetBtn">Show Marksheet</button>
+    <button id="showAddressBtn">Show Address</button>
+    <div id="loading">Loading...</div>
+    <div id="content" class="content"></div>
+
+    
+</body>
+</html>

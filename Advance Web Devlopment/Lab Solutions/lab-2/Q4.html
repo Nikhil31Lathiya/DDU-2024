@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Count the text in ta1 on button click
+        $("#showTxtCnt").click(function () {
+          let cnt = $("#ta1").val().length;
+          $("#txt").text("Count of the text box is: " + cnt);
+        });
+
+        // Update text count as and when text is entered in ta2
+        $("#ta2").on("input", function () {
+          let cnt = $(this).val().length;
+          $("#txt2").text(cnt);
+        });
+
+        // Restrict max characters in ta2 to 10
+        $("#ta2").attr("maxlength", 10);
+
+        // Automatically copy text from ta1 to ta2
+        $("#ta1").on("input", function () {
+          $("#ta2").val($(this).val());
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <textarea name="" id="ta1" cols="30" rows="10"></textarea>
+    <button id="showTxtCnt">Click Me</button><br />
+    <textarea name="" id="ta2" cols="30" rows="10"></textarea>
+    <p id="txt"></p>
+    <p id="txt2"></p>
+  </body>
+</html>

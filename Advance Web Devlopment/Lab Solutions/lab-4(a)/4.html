@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 4_4</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <button id="load_json">Load JSON</button>
+    <div id="div">
+      <!-- <p id="name">Name:</p>
+        <p>subject:</p>
+        <p>max marks</p>
+        <p>total marks</p> -->
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#load_json").click(function () {
+          $.ajax({
+            url: "marks.json",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+              var htmlContent =
+                "<table border=1><tr><th>Name</th><th>Subject</th><th>Marks Obtained</th><th>Total Marks</th></tr>";
+
+              $.each(data.stud_marks, function (index, stud_marks) {
+                htmlContent += "<tr>";
+                htmlContent += "<td>" + stud_marks.name + "</td>";
+                htmlContent += "<td>" + stud_marks.subject + "</td>";
+                htmlContent += "<td>" + stud_marks.marks_obtained + "</td>";
+                htmlContent += "<td>" + stud_marks.total_marks + "</td>";
+                htmlContent += "</tr>";
+              });
+
+              htmlContent += "</table>";
+              $("#div").html(htmlContent);
+            },
+            error: function (xhr) {
+              alert("Error: " + xhr.status + " " + xhr.statusText);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

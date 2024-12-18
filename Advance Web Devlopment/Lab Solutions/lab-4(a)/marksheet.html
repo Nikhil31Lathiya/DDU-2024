@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <style>
+       table, th, td, div{
+        border: 1px solid black;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Marksheet</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Subject Name</th>
+                    <th>Max Marks</th>
+                    <th>Marks Obtained</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>C</td>
+                    <td>100</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>C++</td>
+                    <td>100</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>JAVA</td>
+                    <td>100</td>
+                    <td>77</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        <div class="total">
+            Total Marks Obtained: <span id="total-marks">197</span>
+        </div>
+        <div class="percentage">
+            Percentage Obtained: <span id="percentage">65.66%</span>
+        </div>
+    </div>
+</body>
+</html>

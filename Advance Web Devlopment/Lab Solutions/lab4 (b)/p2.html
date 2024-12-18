@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Address</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#showAddressBtn').click(function() {
+                $.ajax({
+                    url: 'address.txt',
+                    method: 'GET',
+                    success: function(data) {
+                        $('#addressDisplay').text(data);
+                    },
+                    error: function() {
+                        $('#addressDisplay').text('Error loading address.');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="showAddressBtn">Show Address</button>
+    <div id="addressDisplay"></div>
+
+    
+</body>
+</html>

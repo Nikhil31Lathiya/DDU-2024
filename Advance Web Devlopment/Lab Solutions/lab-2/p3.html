@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <style>
+        /* Initial background color for div2 and div3 */
+        #div2, #div3 {
+            background-color: white;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // Add div1 to the body without removing existing content
+            $("body").append("<div id='div1'>Welcome</div>");
+            
+            // Hover function for div1
+            $("#div1").hover(
+                function() {
+                    // Mouse enters div1
+                    $("#div2, #div3").css("background-color", "green");
+                },
+                function() {
+                    // Mouse leaves div1
+                    $("#div2, #div3").css("background-color", "white");
+                }
+            );
+
+            // Hide button click function
+            $("#hideButton").click(function() {
+                $("#p1").hide();
+            });
+
+            // Show button click function
+            $("#showButton").click(function() {
+                $("#p1").show();
+            });
+            
+            $("#toggleButton").click(function() {
+                $("#p1").toggle();
+            });
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <div id="div2">A</div>
+    <div id="div3">B</div>
+    
+    <p id="p1">Hello world</p>
+    <button id="hideButton">Hide</button>
+    <button id="showButton">Show</button>
+    <button id="toggleButton">Toggle_Show</button>
+
+</body>
+</html>
