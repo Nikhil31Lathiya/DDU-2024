@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee registration form</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td><img src="man.png" alt="images" height="100px" width="100px"></td>
+                <td><h1 style="color: red;">Employee Registration Form</h1></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" name="label" id="label" value="Mr. " checked>Mr.
+                    <input type="radio" name="label" id="label" value="Mrs.">Mrs.
+                    <input type="radio" name="label" id="label" value="Ms.">Ms.
+                </td>
+            </tr>
+            <tr>
+                <td><label for="fname">First Name : </label></td>
+                <td><input type="text" name="name" id="name" placeholder="First name"></td>
+            </tr>
+            <tr>
+                <td><label for="lname">Last Name : </label></td>
+                <td><input type="text" name="lname" id="lname" placeholder="Last name"></td>
+            </tr>
+            <tr>
+                <td><label for="address1">Mail Address1 : </label></td>
+                <td><input type="text" name="address1" id="add1"></td>
+            </tr>
+            <tr>
+                <td><label for="address2">Mail Address2 : </label></td>
+                <td><input type="text" name="address2" id="add2"></td>
+            </tr>
+            <tr>
+                <td><label for="city">city</label></td>
+                <td><input type="text" name="city" id="city"></td>
+            </tr>
+            <tr>
+                <td><label for="state">State</label></td>
+                <td>
+                    <select name="state" id="state">
+                        <option value="gujrat">Gujrat</option>
+                        <option value="bihar">Bihar</option>
+                        <option value="maharastra">Maharastra</option>
+                        <option value="assam">Assam</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="bengal">Bengal</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="zip">Zip : </label></td>
+                <td><input type="number" name="zip" id="zip"></td>
+            </tr>
+            <tr>
+                <td><label for="upload images">Upload Image : </label></td>
+                <td><input type="file" name="f1" id="f1"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email : </label></td>
+                <td><input type="email" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td><label for="mobile">Mobile : </label></td>
+                <td><input type="number" name="mobile" id="mobile" placeholder="+91"></td>
+            </tr>
+            <tr>
+                <td><label for="lang">Language Known : </label></td>
+                <td><input type="checkbox" name="ch1" id="ch1" value="gujrati">Gujrati <br>
+                <input type="checkbox" name="ch1" id="ch1" value="hindi">Hindi <br>
+                <input type="checkbox" name="ch1" id="ch1" value="english">English <br>
+                <input type="checkbox" name="ch1" id="ch1" value="marathi">Marathi <br></td>
+            </tr>
+            <tr>
+                <td><label for="add info">Additional Information : </label></td>
+                <td><textarea name="addinfo" placeholder="Optional" id="addinfo" cols="30" rows="10" >optional</textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+                
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

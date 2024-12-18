@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>
+        HTML Practical
+    </title>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="500px" width="500px" style="border: 1px solid black;"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var c = canvas.getContext("2d");
+
+        c.beginPath();
+        c.rect(20,20,200,80);
+        c.fillStyle = "yellow";
+        c.fill();
+        c.strokeStyle = "red";
+        c.stroke();
+
+        c.font = "40px Arial";
+        c.fillStyle = "red";
+        c.fillText("Hello",70,70);
+    </script>
+</body>
+
+</html>

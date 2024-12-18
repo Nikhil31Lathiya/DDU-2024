@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>HTML Practical</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      height="500px"
+      width="500px"
+      style="border: 1px"
+    ></canvas>
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var c = canvas.getContext("2d");
+
+      c.beginPath();
+      c.rect(100, 100, 250, 180);
+      c.stroke();
+
+      c.beginPath();
+      c.arc(150, 150, 30, 0, Math.PI * 2);
+      c.strokeStyle = "blue";
+      c.stroke();
+
+      c.beginPath();
+      c.arc(179, 179, 30, 0, Math.PI * 2);
+      c.strokeStyle = "yellow";
+      c.stroke();
+
+      c.beginPath();
+      c.arc(215, 150, 30, 0, Math.PI * 2);
+      c.strokeStyle = "black";
+      c.stroke();
+
+      c.beginPath();
+      c.arc(249, 180, 30, 0, Math.PI * 2);
+      c.strokeStyle = "green";
+      c.stroke();
+      c.beginPath();
+      c.arc(280, 150, 30, 0, Math.PI * 2);
+      c.strokeStyle = "red";
+      c.stroke();
+      c.font = "30px Arial bold";
+      c.fillText("Culterville - 2022", 120, 250);
+    </script>
+  </body>
+</html>

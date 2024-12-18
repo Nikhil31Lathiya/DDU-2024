@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>
+            HTML Practical
+        </title>
+    </head>
+    <body>
+        <canvas id="myCanvas" height="500px" width="500px" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var c = canvas.getContext("2d");
+
+            c.beginPath();
+            c.rect(100,100,250,180);
+            c.strokeStyle = "red";
+            c.stroke();
+
+            c.scale(1.5,1);
+            c.beginPath();
+            c.arc(150,200,70,0,Math.PI * 2,false);
+            c.strokeStyle = "green";
+            c.stroke();
+        </script>
+    </body>
+</html>
